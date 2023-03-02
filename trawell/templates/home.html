@@ -1,0 +1,112 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block content %}
+
+<section id="section-1">
+  <form method="post">
+    {% csrf_token %}
+    <input type="text" name="search" id="search" style="position: absolute; left: 30%; right: 30%; top: 85%; z-index: 10; width: 40%; height: 60px; letter-spacing: 2px; opacity: 0.8;" placeholder="Search Your Destination" class="form-control search-desti">
+  </form>
+  <div class="content-slider">
+    <input type="radio" id="banner1" class="sec-1-input" name="banner" checked>
+    <div class="slider">
+      <div id="top-banner-1" class="banner">
+        <div class="banner-inner-wrapper header-text" >
+          <div class="main-caption" style="margin-top: 150px;">
+            <h2>Take a Glimpse Into The Beautiful Places</h2>
+            <h1>Trawell</h1>
+            <div class="border-button"><a href="{% url 'about' %}">Explore</a></div>
+          </div>
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-12">
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="visit-country">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-5">
+        <div class="section-heading">
+          <h2 class="text-light">Visit One Of Our Countries Now</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-11">
+        <div class="items">
+          <div class="row">
+            {% for x in packages %}
+            <div class="col-lg-12">
+              <div class="item">
+                <div class="row">
+                  <div class="col-lg-4 col-sm-5">
+                    <div class="image">
+                      <img src="{% static 'images/country-01.jpg' %}" alt="">
+                    </div>
+                  </div>
+                  <div class="col-lg-8 col-sm-7 text-light">
+                    <div class="right-content text-light">
+                      <h4 class="text-light">{{x.package_name}}</h4>
+                      <span>{{x.id}}</span>
+                      <div class="main-button">
+                        <a href="">Explore More</a>
+                      </div>
+                      <p>Woox Travel is a professional Bootstrap 5 theme HTML CSS layout for your website. You can use this layout for your commercial work.</p>
+                      <ul class="info text-light">
+                        <li><i class="fa fa-user"></i> 8.66 Mil People</li>
+                        <li><i class="fa fa-globe"></i> 41.290 km2</li>
+                        <li><i class="fa fa-home"></i> $1.100.200</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-1">
+      
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="call-to-action">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8">
+        <h2>Are You Looking To Travel ?</h2>
+        <h4>---</h4>
+      </div>
+      <div class="col-lg-4">
+        <div class="border-button">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .search-desti{
+    opacity: 1;
+    transition: 0.3s;
+  }
+  .search-desti:hover{
+    opacity: 1;
+    transform: scale(1.1);
+  }
+</style>
+{% endblock content %}
+
+ 
